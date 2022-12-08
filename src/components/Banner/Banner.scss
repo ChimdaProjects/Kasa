@@ -1,0 +1,23 @@
+.banner {
+    margin-top: 68px;
+    width: 100%;
+    height: 223px;
+    &-img {
+       
+        border-radius: 25px;
+        position: relative;
+
+    }
+    &-title {
+        position: absolute;
+        left: 25.9%;
+        right: 25.14%;
+        top: 24.32%;
+        bottom: 69.04%;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 48px;
+        line-height: 142.6%;
+        color: #FFFFFF;
+    }
+}
