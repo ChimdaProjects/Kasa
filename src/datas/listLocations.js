@@ -1,4 +1,5 @@
-[
+// eslint-disable-next-line
+export default [
     {
     "id": "c67ab8a7",
     "title": "Appartement cosy",
@@ -616,4 +617,4 @@
     "Rivoli"
     ]
     }
-    ]
+]
