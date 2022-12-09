@@ -1,19 +1,24 @@
 .banner {
     margin-top: 68px;
-    width: 100%;
+    width: 1240px;
     height: 223px;
+    background-color: #000000;
+    border-radius: 25px;
+    mix-blend-mode: darken;
+    
+
     &-img {
        
         border-radius: 25px;
-        position: relative;
+        opacity: 0.5;
+        
 
     }
     &-title {
         position: absolute;
-        left: 25.9%;
-        right: 25.14%;
-        top: 24.32%;
-        bottom: 69.04%;
+        top: 20%;
+        left: 35%;
+      
         font-style: normal;
         font-weight: 500;
         font-size: 48px;

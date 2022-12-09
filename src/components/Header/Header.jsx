@@ -5,7 +5,7 @@ import logo from "../../assets/logo.svg";
 const Header = () => {
     let activeStyle = {
         textDecoration: "underline",
-      };
+    };
 
     return (
         <header className="header">
@@ -21,7 +21,6 @@ const Header = () => {
                     <li >
                         <NavLink 
                             className="header-nav-list-elt"
-                            exact 
                             to="/"
                             style={({ isActive }) =>
                             isActive ? activeStyle : undefined
@@ -33,13 +32,12 @@ const Header = () => {
                     <li>
                         <NavLink 
                         className="header-nav-list-elt"
-                        exact 
                         to="/aboutUs"
                         style={({ isActive }) =>
                         isActive ? activeStyle : undefined
                       }
                         >
-                            A propos
+                            A Propos
                         </NavLink>
                     </li>
                 </ul>
