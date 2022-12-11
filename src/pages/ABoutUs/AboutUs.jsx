@@ -12,7 +12,7 @@ import data from "../../datas/apropos"
 const AboutUs = () => {
 
     return (
-        <React.Fragment>
+        <div className="aboutUs">
             <Banner 
             imgSrc={imgAbout}
             altText={"illustration à la montagne"}
@@ -23,13 +23,13 @@ const AboutUs = () => {
                         <Collapse
                         key={item.id}
                         {...item}
-                        />
-              
-                  
+                        />  
             ))}
+
+            <Footer />
          
            
-        </React.Fragment>
+        </div>
     )
 }
 
