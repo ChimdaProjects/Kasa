@@ -2,41 +2,39 @@ import React from "react";
 import { useState } from "react";
 import "./collapse.scss";
 import chevronDown from "../../assets/chevron_down.svg"
-
-const Collapse = ({text}) => {
-    const [editIndex, setEditIndex] = useState(null);
+import chevronUp from "../../assets/chevron_up.svg"
+const Collapse = ({title, text}) => {
+    
+    //const [editIndex, setEditIndex] = useState(null);
+    const [open, setOpen] = useState(false);
+    //setEditIndex(editIndex => editIndex === index ? null : index
+    
     
     return (
-        <React.Fragment>
-        {text.map((cat, index)=> (
            
-            <div className="collapse" key={index}>
+            <div className="collapse" >
                 
                 <button className="collapse-btn">
-                    <h3 className="collapse-btn-title">{cat.title}</h3>
+                    <h3 className="collapse-btn-title">{title}</h3>
                     <img 
                         className="collapse-chevron" 
-                        src={chevronDown} alt="icon" 
-                        value={cat.title}
-                        id={cat.id}
-                        onClick={() => setEditIndex(editIndex => editIndex === index ? null : index)}
-                        />  
+                        src={open? chevronUp : chevronDown} alt="icon" 
+                        value={title}
+                       
+                        onClick={() => setOpen(!open)
+                        }
+                    />  
                 </button>
-                { editIndex === index && 
-                <div className="collapse-content-active">
-                    <p className="collapse-content-text">
-                            {cat.text}
-                    </p>
-                </div>
-                }
-                     
                 
-               
+                <div className={open? "collapse-content-active":"collapse-content-inactive" }>
+                    <p className="collapse-content-text">{text}</p>
+                </div>
+            
             </div>
        
-        ))}
+  
        
-    </React.Fragment>   
+   
     )
    
 }

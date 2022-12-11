@@ -36,11 +36,15 @@
         
         background: #F7F7F7;
         border-radius: 5px;
-        //display:none;
+        &-inactive {
+            display:none;
+        }
         
         &-active {
             display:block;
         }
+        
+      
         
         &-text {
             text-align: left;

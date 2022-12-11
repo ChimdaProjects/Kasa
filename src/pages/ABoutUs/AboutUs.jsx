@@ -1,4 +1,5 @@
 import React from "react";
+
 // component
 import Banner from "../../components/Banner/Banner";
 import Footer from "../../components/Footer/Footer";
@@ -6,9 +7,10 @@ import Footer from "../../components/Footer/Footer";
 import imgAbout from "../../assets/img-about.svg"
 import Collapse from "../../components/Collapse/Collapse";
 //import data
-import text from "../../datas/apropos"
+import data from "../../datas/apropos"
 
 const AboutUs = () => {
+
     return (
         <React.Fragment>
             <Banner 
@@ -16,10 +18,17 @@ const AboutUs = () => {
             altText={"illustration à la montagne"}
             title={""}
             />
-            <Collapse
-                text={text}
-            />
-            <Footer />
+            {data.map((item)=> (
+       
+                        <Collapse
+                        key={item.id}
+                        {...item}
+                        />
+              
+                  
+            ))}
+         
+           
         </React.Fragment>
     )
 }
