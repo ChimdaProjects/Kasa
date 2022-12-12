@@ -9,11 +9,6 @@ const Gallery = ({list}) => {
                 list.map((loc)=> (
                         <Card
                             key={loc.id}
-                            /*
-                              id={loc.id}
-                            title={loc.title}
-                            cover={loc.cover}
-                            */
                             {...loc}
                           
                         />

@@ -10,8 +10,10 @@ import imgHome from "../../assets/img_home.svg";
 //import datas
 import list from "../../datas/listLocations"
 
+import { useParams } from 'react-router-dom';
 
 const Home = () => {
+    
     return (
         <React.Fragment>
      
