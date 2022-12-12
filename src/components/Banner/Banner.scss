@@ -11,6 +11,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+   
 
     &-img {
        
@@ -29,3 +30,11 @@
    
     }
 }
+
+@media screen and (max-width: 375px) {
+    .banner {
+        width: 335px;
+        height: 111px;
+    }
+   
+ }
