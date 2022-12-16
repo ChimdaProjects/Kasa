@@ -3,7 +3,7 @@ import React from 'react';
 // import components
 import Banner from '../../components/Banner/Banner';
 import Gallery from '../../components/Gallery/Gallery';
-import Footer from '../../components/Footer/Footer';
+
 // import img
 import imgHome from "../../assets/img_home.svg";
 
@@ -27,7 +27,6 @@ const Home = () => {
             list = {list}
         /> 
 
-        <Footer />
         </React.Fragment>
 
         

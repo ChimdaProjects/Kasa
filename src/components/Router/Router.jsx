@@ -1,9 +1,10 @@
 import React from "react";
 import Home from "../../pages/Home/Home";
 import AboutUs from "../../pages/ABoutUs/AboutUs";
-import Location from "../../pages/Location/Location";
+import Property from "../../pages/Property/Property";
 import NotFound from "../../pages/NotFound/NotFound";
 import { Route, Routes } from "react-router-dom";
+
 
 const Router = () => {
     return (
@@ -14,7 +15,7 @@ const Router = () => {
           </Route>
 
           <Route path="location">
-            <Route path=':locId' element= {<Location/>} />
+            <Route path=':locId' element= {<Property/>} />
           </Route>
           
           <Route 

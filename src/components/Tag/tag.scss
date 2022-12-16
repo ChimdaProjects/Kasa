@@ -1,0 +1,21 @@
+.tag {
+    display: flex;
+    justify-content: center;
+    background-color: #FF6060;
+    width: 12%;
+    height: 25px;
+    border-radius: 10px;
+    margin-right: 10px;
+    padding-bottom: 3px;
+    &-content {
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0em;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        
+        color: #FFF;
+
+    }
+}

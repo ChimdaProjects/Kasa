@@ -1,15 +1,13 @@
 import React from "react";
 import { useState } from "react";
 import "./collapse.scss";
-import chevronDown from "../../assets/chevron_down.svg"
-import chevronUp from "../../assets/chevron_up.svg"
+import chevronDown from "../../assets/chevron_down.svg";
+import chevronUp from "../../assets/chevron_up.svg";
+
 const Collapse = ({title, text}) => {
-    
-    //const [editIndex, setEditIndex] = useState(null);
+
     const [open, setOpen] = useState(false);
-    //setEditIndex(editIndex => editIndex === index ? null : index
-    
-    
+
     return (
            
             <div className="collapse" >
@@ -21,20 +19,19 @@ const Collapse = ({title, text}) => {
                         src={open? chevronUp : chevronDown} alt="icon" 
                         value={title}
                        
-                        onClick={() => setOpen(!open)
+                        onClick={
+                            () => setOpen(!open)
                         }
                     />  
                 </button>
                 
                 <div className={open? "collapse-content-active":"collapse-content-inactive" }>
-                    <p className="collapse-content-text">{text}</p>
+                    <p className="collapse-content-text ">
+                        {text}
+                    </p>
                 </div>
-            
-            </div>
-       
-  
-       
-   
+                
+            </div> 
     )
    
 }

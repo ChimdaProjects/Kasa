@@ -1,10 +1,10 @@
 //import logo from '../assets/logo.svg';
 import './App.scss';
-//router
-import { Route, Routes } from 'react-router-dom';
+
 //import components
 import Header from '../Header/Header';
 import Router from '../Router/Router';
+import Footer from '../Footer/Footer';
 
 
 const App = () => {
@@ -12,10 +12,8 @@ const App = () => {
     <div className='App'>
         <Header />
         <Router />
-        
-      
+        <Footer />
     </div>
-
   );
 }
 
