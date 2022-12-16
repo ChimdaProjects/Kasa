@@ -10,9 +10,12 @@
     }
     &-counter {
         position:absolute;
-        left: 46%;
+        left: 50%;
         bottom: 55%;
         font-size: 18px;
+        & img {
+            height: 1.5rem;
+        }
 
         
     }
@@ -42,7 +45,5 @@
     display: block;
 }
 
-.slideshow-bullet {
 
-}
 

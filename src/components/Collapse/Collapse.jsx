@@ -11,26 +11,21 @@ const Collapse = ({title, text}) => {
     return (
            
             <div className="collapse" >
-                
                 <button className="collapse-btn">
                     <h3 className="collapse-btn-title">{title}</h3>
                     <img 
                         className="collapse-chevron" 
                         src={open? chevronUp : chevronDown} alt="icon" 
                         value={title}
-                       
-                        onClick={
-                            () => setOpen(!open)
-                        }
+                        onClick={() => setOpen(!open)}
                     />  
                 </button>
                 
                 <div className={open? "collapse-content-active":"collapse-content-inactive" }>
-                    <p className="collapse-content-text ">
+                    <div className="collapse-content-text ">
                         {text}
-                    </p>
+                    </div>
                 </div>
-                
             </div> 
     )
    

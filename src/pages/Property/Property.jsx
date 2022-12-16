@@ -1,5 +1,5 @@
-import React from "react";
-import { useParams } from "react-router-dom";
+import React, { useEffect} from "react";
+import { useParams, useNavigate } from "react-router-dom";
 //components
 import Slideshow from "../../components/Slideshow/Slideshow";
 import Tag from "../../components/Tag/Tag";
@@ -9,27 +9,33 @@ import list from "../../datas/listLocations";
 //css
 import "./property.scss"
 //images
-import starRate from "../../assets/star.svg"
+import starRate from "../../assets/star_rate.svg"
 import star from "../../assets/star_grey.svg"
 
 
 const Property = () => {
-
+   
     const {locId} = useParams();
-
-    let rentProp = list.map((item) => item).find(item => item.id === locId);
-    const firstName = rentProp.host.name.split(" ")[0];
-    const lastName = rentProp.host.name.split(" ")[1];
-
+    let rentProp = list.find(item => item.id === locId);
+    const navigate = useNavigate();
+   
+    useEffect(()=> {
+        if (rentProp === undefined) {
+           navigate("/notfound");
+        }
+    }, [rentProp, locId, navigate])
+        
+    const rate = [1, 2, 3, 4, 5];
     
-    return (
+     return (
+        
         <div className="property">
-          
+
            <Slideshow
                 list = {rentProp} 
             />
-        <section className="property-informations">
-        
+            <section className="property-informations">
+            
                 <div className="property-left">
                     <h3 className="property-title">{rentProp.title}</h3>
                     <p className="property-location">{rentProp.location}</p>
@@ -42,30 +48,35 @@ const Property = () => {
                         ))}
                     </div>
                 </div>
-                
+                    
                 <div className="property-right">
                     <div className="property-identity">
-                        <p className="property-host">
-                            <div>{firstName}</div>
-                            <div>{lastName}</div>
-                            </p>
-                        <img className="property-avatar" src ={rentProp.host.picture}/>
-            
+                        <div className="property-host">
+                            <div>{rentProp.host.name.split(" ")[0]}</div>
+                            <div>{rentProp.host.name.split(" ")[1]}</div>
+                        </div>
+                        <img 
+                            className="property-avatar" 
+                            src ={rentProp.host.picture}
+                            alt="avatar"
+                        />
                     </div>
             
                     <div className="property-rating">
-                        <img src={star} alt="icon star rating" className="star-empty"/>
-                        <img src={star} alt="icon star rating" className="star-empty"/>
-                        <img src={star} alt="icon star rating" className="star-empty"/>
-                        <img src={star} alt="icon star rating" className="star-empty"/>
-                        <img src={star} alt="icon star rating" className="star-empty"/>
+                        {
+                           rate.map((item)=>(
+                                    <img 
+                                        key={item} 
+                                        src={item <= parseInt(rentProp.rating) ? starRate : star} 
+                                        alt="icon star rating" 
+                                    />
+                           )) 
+                        }
+                        
                     </div>
                 </div>
-            
+            </section>
            
-        </section>
-           
-            
             <div className="property-desc">
                 <div className="property-desc-description">
                     <Collapse 
@@ -76,13 +87,11 @@ const Property = () => {
                 <div className="property-desc-equipments">
                     <Collapse 
                     title = "Equipements"
-                    text = {rentProp.equipments.map((item)=>(
-                        <li className="equipment">{item}</li>
+                    text = {rentProp.equipments.map((elt, index)=>(
+                            <p key={elt + index} className="equipment">{elt}</p>
                     ))}
-                
-                />
+                    />
                 </div>           
-            
             </div>
         </div>
     )

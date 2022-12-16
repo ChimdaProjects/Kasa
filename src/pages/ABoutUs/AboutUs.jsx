@@ -1,13 +1,13 @@
 import React from "react";
-
 // component
 import Banner from "../../components/Banner/Banner";
-
 // import img
 import imgAbout from "../../assets/img-about.svg"
 import Collapse from "../../components/Collapse/Collapse";
 //import data
 import data from "../../datas/apropos"
+//css
+import "./aboutUs.scss"
 
 const AboutUs = () => {
 
@@ -24,7 +24,6 @@ const AboutUs = () => {
                             {...item}
                         />  
             ))}
-         
         </div>
     )
 }

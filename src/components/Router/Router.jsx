@@ -3,7 +3,7 @@ import Home from "../../pages/Home/Home";
 import AboutUs from "../../pages/ABoutUs/AboutUs";
 import Property from "../../pages/Property/Property";
 import NotFound from "../../pages/NotFound/NotFound";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 
 
 const Router = () => {
@@ -14,7 +14,7 @@ const Router = () => {
             element={< Home />} >
           </Route>
 
-          <Route path="location">
+          <Route path="accommodation">
             <Route path=':locId' element= {<Property/>} />
           </Route>
           
@@ -22,7 +22,10 @@ const Router = () => {
             path="/aboutUs" 
             element={< AboutUs />} >
           </Route>
-        
+          <Route
+            path="/notfound"
+            element={< NotFound />}>
+          </Route>
           <Route
             path="*"
             element={< NotFound />}>
