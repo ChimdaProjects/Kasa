@@ -17,10 +17,14 @@ const Property = () => {
    
     const {locId} = useParams();
     let rentProp = list.find(item => item.id === locId);
+    console.log(rentProp)
     const navigate = useNavigate();
+    const {id, title, host,description, rating, location, equipments, tags} = rentProp;
    
-    useEffect(()=> {
+    useEffect(() => {
+        console.log("je rentre dans le useeffect")
         if (rentProp === undefined) {
+            console.log("je rentre dans la condition")
            navigate("/notfound");
         }
     }, [rentProp, locId, navigate])
@@ -28,20 +32,20 @@ const Property = () => {
     const rate = [1, 2, 3, 4, 5];
     
      return (
-        
+            
         <div className="property">
-
+        
            <Slideshow
                 list = {rentProp} 
             />
             <section className="property-informations">
             
                 <div className="property-left">
-                    <h3 className="property-title">{rentProp.title}</h3>
-                    <p className="property-location">{rentProp.location}</p>
+                    <h3 className="property-title">{title}</h3>
+                    <p className="property-location">{location}</p>
                 
                     <div className="property-tag">
-                        {rentProp.tags.map((item)=> (
+                        {tags.map((item)=> (
                             <Tag 
                                 key ={item}
                                 tag = {item}/>
@@ -52,12 +56,12 @@ const Property = () => {
                 <div className="property-right">
                     <div className="property-identity">
                         <div className="property-host">
-                            <div>{rentProp.host.name.split(" ")[0]}</div>
-                            <div>{rentProp.host.name.split(" ")[1]}</div>
+                            <div>{host.name.split(" ")[0]}</div>
+                            <div>{host.name.split(" ")[1]}</div>
                         </div>
                         <img 
                             className="property-avatar" 
-                            src ={rentProp.host.picture}
+                            src ={host.picture}
                             alt="avatar"
                         />
                     </div>
@@ -67,7 +71,7 @@ const Property = () => {
                            rate.map((item)=>(
                                     <img 
                                         key={item} 
-                                        src={item <= parseInt(rentProp.rating) ? starRate : star} 
+                                        src={item <= parseInt(rating) ? starRate : star} 
                                         alt="icon star rating" 
                                     />
                            )) 
@@ -81,13 +85,13 @@ const Property = () => {
                 <div className="property-desc-description">
                     <Collapse 
                     title ="Description"
-                    text = {rentProp.description}
+                    text = {description}
                 />
                 </div>
                 <div className="property-desc-equipments">
                     <Collapse 
                     title = "Equipements"
-                    text = {rentProp.equipments.map((elt, index)=>(
+                    text = {equipments.map((elt, index)=>(
                             <p key={elt + index} className="equipment">{elt}</p>
                     ))}
                     />

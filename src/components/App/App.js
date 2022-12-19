@@ -7,7 +7,9 @@ import Router from '../Router/Router';
 import Footer from '../Footer/Footer';
 
 
+
 const App = () => {
+ 
   return (
     <div className='App'>
         <Header />

@@ -3,7 +3,7 @@ import Home from "../../pages/Home/Home";
 import AboutUs from "../../pages/ABoutUs/AboutUs";
 import Property from "../../pages/Property/Property";
 import NotFound from "../../pages/NotFound/NotFound";
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 
 const Router = () => {
