@@ -7,11 +7,12 @@
         object-fit: cover;
         position: relative;
         border-radius: 25px;
+        margin: 0 auto;
     }
     &-counter {
         position:absolute;
         left: 50%;
-        bottom: 55%;
+        bottom: 40%;
         font-size: 18px;
         & img {
             height: 1.5rem;
