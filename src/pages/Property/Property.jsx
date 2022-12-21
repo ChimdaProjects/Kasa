@@ -1,5 +1,5 @@
 import React, { useEffect} from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Navigate } from "react-router-dom";
 //components
 import Slideshow from "../../components/Slideshow/Slideshow";
 import Tag from "../../components/Tag/Tag";
@@ -13,22 +13,27 @@ import starRate from "../../assets/star_rate.svg"
 import star from "../../assets/star_grey.svg"
 
 
+
 const Property = () => {
    
     const {locId} = useParams();
+    console.log("locid", locId);
     let rentProp = list.find(item => item.id === locId);
-    console.log(rentProp)
+    console.log("rentProp", rentProp)
     const navigate = useNavigate();
-    const {id, title, host,description, rating, location, equipments, tags} = rentProp;
-   
-    useEffect(() => {
-        console.log("je rentre dans le useeffect")
+    useEffect(()=> {
         if (rentProp === undefined) {
             console.log("je rentre dans la condition")
-           navigate("/notfound");
-        }
-    }, [rentProp, locId, navigate])
-        
+            //return <Navigate to="/notfound" /> 
+            navigate("/notfound");
+        } 
+    }, [locId, rentProp])
+    if (rentProp === undefined) {
+        console.log("je rentre dans la condition")
+        return <Navigate to="/notfound" /> 
+    }
+    
+    const {title, host, description, rating, location, equipments, tags} = rentProp;  
     const rate = [1, 2, 3, 4, 5];
     
      return (

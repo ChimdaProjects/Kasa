@@ -11,8 +11,8 @@
     }
     &-counter {
         position:absolute;
-        left: 50%;
-        bottom: 40%;
+        left: 49%;
+        bottom: 52%;
         font-size: 18px;
         & img {
             height: 1.5rem;
@@ -103,6 +103,16 @@
     .slideshow {
         &-counter {
             left: 20%;
+        }
+    }
+    
+}
+
+@media screen and (min-width:1000px) and (max-width:1440px) {
+    .slideshow {
+        &-counter {
+            left: 30%;
+            bottom: 30%;
         }
     }
     
