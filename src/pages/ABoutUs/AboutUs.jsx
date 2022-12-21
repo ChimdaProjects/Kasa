@@ -3,7 +3,7 @@ import React from "react";
 import Banner from "../../components/Banner/Banner";
 // import img
 import imgAbout from "../../assets/img-about.svg"
-import Collapse from "../../components/Collapse/Collapse";
+import Collapsible from "../../components/Collapsible/Collapsible";
 //import data
 import data from "../../datas/apropos"
 //css
@@ -19,7 +19,7 @@ const AboutUs = () => {
                 title={""}
             />
             {data.map((item)=> (
-                        <Collapse
+                        <Collapsible
                             key={item.id}
                             {...item}
                         />  

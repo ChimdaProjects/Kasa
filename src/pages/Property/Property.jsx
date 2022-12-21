@@ -3,7 +3,7 @@ import { useParams, useNavigate, Navigate } from "react-router-dom";
 //components
 import Slideshow from "../../components/Slideshow/Slideshow";
 import Tag from "../../components/Tag/Tag";
-import Collapse from "../../components/Collapse/Collapse";
+import Collapsible from "../../components/Collapsible/Collapsible";
 import Host from "../../components/Host/Host";
 import Title from "../../components/Title/Title";
 import Rate from "../../components/Rate/Rate";
@@ -68,13 +68,13 @@ const Property = () => {
            
             <div className="property-desc">
                 <div className="property-desc-description">
-                    <Collapse 
+                    <Collapsible
                     title ="Description"
                     text = {description}
                 />
                 </div>
                 <div className="property-desc-equipments">
-                    <Collapse 
+                    <Collapsible
                     title = "Equipements"
                     text = {equipments.map((elt, index)=>(
                             <p key={elt + index} className="equipment">{elt}</p>

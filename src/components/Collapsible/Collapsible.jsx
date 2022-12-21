@@ -1,13 +1,14 @@
 import React from "react";
-import { useState } from "react";
-import "./collapse.scss";
+import { useState, useRef } from "react";
+import "./collapsible.scss";
 import chevronDown from "../../assets/chevron_down.svg";
 import chevronUp from "../../assets/chevron_up.svg";
 
-const Collapse = ({title, text}) => {
+const Collapsible = ({title, text}) => {
 
     const [open, setOpen] = useState(false);
-
+    const contentRef = useRef();
+    if (contentRef.current) console.log(contentRef.current.scrollHeight);
     return (
            
             <div className="collapse" >
@@ -21,7 +22,8 @@ const Collapse = ({title, text}) => {
                     />  
                 </button>
                 
-                <div className={open? "collapse-content-active":"collapse-content-inactive" }>
+                <div className="collapse-content-parent"
+                    ref={contentRef} style = {open ? {height: contentRef.current.scrollHeight + "px"} : {height: "0px"}}>
                     <div className="collapse-content-text ">
                         {text}
                     </div>
@@ -31,4 +33,4 @@ const Collapse = ({title, text}) => {
    
 }
 
-export default Collapse;
+export default Collapsible;
