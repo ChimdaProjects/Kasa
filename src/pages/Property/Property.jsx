@@ -4,87 +4,67 @@ import { useParams, useNavigate, Navigate } from "react-router-dom";
 import Slideshow from "../../components/Slideshow/Slideshow";
 import Tag from "../../components/Tag/Tag";
 import Collapse from "../../components/Collapse/Collapse";
+import Host from "../../components/Host/Host";
+import Title from "../../components/Title/Title";
+import Rate from "../../components/Rate/Rate";
 //data
 import list from "../../datas/listLocations";
 //css
 import "./property.scss"
-//images
-import starRate from "../../assets/star_rate.svg"
-import star from "../../assets/star_grey.svg"
 
-
-
+/**
+ * this component returns the page of each property
+ * @returns 
+ */
 const Property = () => {
-   
+    // params from the current URL
     const {locId} = useParams();
-    console.log("locid", locId);
+    // find the info of accommodation clicked
     let rentProp = list.find(item => item.id === locId);
-    console.log("rentProp", rentProp)
-    const navigate = useNavigate();
-    useEffect(()=> {
-        if (rentProp === undefined) {
-            console.log("je rentre dans la condition")
-            //return <Navigate to="/notfound" /> 
-            navigate("/notfound");
-        } 
-    }, [locId, rentProp])
+    //redirection
     if (rentProp === undefined) {
         console.log("je rentre dans la condition")
         return <Navigate to="/notfound" /> 
-    }
-    
+    } 
+    //destructuring the object rentProp to use each variable
     const {title, host, description, rating, location, equipments, tags} = rentProp;  
-    const rate = [1, 2, 3, 4, 5];
-    
+
      return (
             
         <div className="property">
         
            <Slideshow
-                list = {rentProp} 
+                list = { rentProp } 
             />
             <section className="property-informations">
-            
                 <div className="property-left">
-                    <h3 className="property-title">{title}</h3>
-                    <p className="property-location">{location}</p>
+                   < Title 
+                        title = { title }
+                        location = { location } 
+                    />
                 
-                    <div className="property-tag">
+                </div>  
+
+                <div className="property-right">
+                    <Host info = {host}/>
+                 
+                </div>
+                
+            </section>
+            <div className="property-details">
+                <div className="property-tag">
                         {tags.map((item)=> (
                             <Tag 
                                 key ={item}
                                 tag = {item}/>
                         ))}
-                    </div>
                 </div>
-                    
-                <div className="property-right">
-                    <div className="property-identity">
-                        <div className="property-host">
-                            <div>{host.name.split(" ")[0]}</div>
-                            <div>{host.name.split(" ")[1]}</div>
-                        </div>
-                        <img 
-                            className="property-avatar" 
-                            src ={host.picture}
-                            alt="avatar"
+                <div className="property-rating">
+                        <Rate 
+                            rating={rating} 
                         />
-                    </div>
-            
-                    <div className="property-rating">
-                        {
-                           rate.map((item)=>(
-                                    <img 
-                                        key={item} 
-                                        src={item <= parseInt(rating) ? starRate : star} 
-                                        alt="icon star rating" 
-                                    />
-                           )) 
-                        }
-                        
-                    </div>
                 </div>
-            </section>
+            </div>
            
             <div className="property-desc">
                 <div className="property-desc-description">

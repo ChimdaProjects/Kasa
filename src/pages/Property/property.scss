@@ -13,18 +13,7 @@
         width: 50%;
     }
 
-    &-title {
-        margin-top: 30px;
-        margin-bottom: 0;
-        font-size: 36px;
-        text-align: left;
-    }
 
-    &-location {
-        margin:0.5rem 0 1rem 0;
-        font-size: 18px;
-        text-align: left;
-    }
 
     &-identity {
         margin-top:30px;
@@ -47,14 +36,21 @@
         margin-right: 10px;
 
     }
-
+    &-details {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 100px;
+    }
     &-rating {
         margin-top:24px;
+        
     }
 
     &-tag {
         display: flex;
         margin-top: 40px;
+        width: 60%;
+        
     }
 
     &-desc {
