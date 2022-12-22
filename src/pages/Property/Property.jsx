@@ -36,34 +36,26 @@ const Property = () => {
            <Slideshow
                 list = { rentProp } 
             />
-            <section className="property-informations">
+            <div className="property-informations">
                 <div className="property-left">
                    < Title 
                         title = { title }
                         location = { location } 
                     />
-                
                 </div>  
 
                 <div className="property-right">
                     <Host info = {host}/>
-                 
                 </div>
-                
-            </section>
+            </div>
+
             <div className="property-details">
-                <div className="property-tag">
-                        {tags.map((item)=> (
-                            <Tag 
-                                key ={item}
-                                tag = {item}/>
-                        ))}
-                </div>
-                <div className="property-rating">
-                        <Rate 
-                            rating={rating} 
-                        />
-                </div>
+                <Tag 
+                    tags = {tags}
+                />
+                <Rate 
+                    rating={rating} 
+                />
             </div>
            
             <div className="property-desc">
@@ -71,14 +63,21 @@ const Property = () => {
                     <Collapsible
                     title ="Description"
                     text = {description}
+                    namePage="property"
                 />
                 </div>
                 <div className="property-desc-equipments">
                     <Collapsible
-                    title = "Equipements"
-                    text = {equipments.map((elt, index)=>(
-                            <p key={elt + index} className="equipment">{elt}</p>
-                    ))}
+                        title = "Equipements"
+                        namePage="property"
+                        text = 
+                            { equipments.map(( elt, index ) => 
+                                (
+                                    <p key={elt + index} className="equipment">
+                                        {elt}
+                                    </p>
+                                )) 
+                            }
                     />
                 </div>           
             </div>

@@ -10,7 +10,7 @@ const Rate = ({ rating }) => {
 
     const rate = [1, 2, 3, 4, 5];
     return (
-        <Fragment>
+        <div className="rating">
                   {
                            rate.map((item)=>(
                                     <img 
@@ -20,7 +20,7 @@ const Rate = ({ rating }) => {
                                     />
                            )) 
                         }
-        </Fragment>
+        </div>
     )
 }
 

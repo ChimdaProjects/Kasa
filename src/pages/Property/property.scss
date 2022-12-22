@@ -1,7 +1,7 @@
 .property {
-    
-    color: #FF6060;
     height: 100vh;
+    color: #FF6060;
+   
 
     &-informations {
         margin: 0 100px;
@@ -13,46 +13,14 @@
         width: 50%;
     }
 
-
-
-    &-identity {
-        margin-top:30px;
-        display: flex;
-        align-items: center;
-
-    }
-    &-host {
-        font-size: 18px;
-        text-align: end;
-        
-        margin-right: 1rem;
-    }
-
-    &-avatar {
-        width: 64px;
-        height: 64px;
-        border-radius: 55%;
-        object-fit: cover;
-        margin-right: 10px;
-
-    }
     &-details {
         display: flex;
         justify-content: space-between;
         margin: 0 100px;
+        align-items: center;
+        padding-top: 34px;
     }
-    &-rating {
-        margin-top:24px;
-        
-    }
-
-    &-tag {
-        display: flex;
-        margin-top: 40px;
-        width: 60%;
-        
-    }
-
+ 
     &-desc {
         margin: 0 100px;
         display: flex;
@@ -60,6 +28,8 @@
         justify-content: space-between;
         &-description, &-equipments {
             width: 582px;
+           height:300px;
+            
         }
         
     }
@@ -67,11 +37,14 @@
 .equipment {
     margin: 0;
     list-style-type: none;
+    
 }
 
 .star-empty {
     fill: #ff6060;
 }
+
+
 
 /*RESPONSIVE */
 @media screen and (min-width: 320px) and (max-width:767px) {

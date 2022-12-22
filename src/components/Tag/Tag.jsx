@@ -1,10 +1,13 @@
-import React from "react";
+import React, { Fragment } from "react";
 import "./tag.scss";
 
-const Tag = ({tag}) => {
+const Tag = ({tags}) => {
     return (
         <div className="tag">
-            <p className="tag-content">{tag}</p>
+            { tags.map((tag,index) => (
+                <div className="tag-content" key={`${tag}-${index}`}>{ tag }</div>
+            ))
+            }
         </div>
     )
 }

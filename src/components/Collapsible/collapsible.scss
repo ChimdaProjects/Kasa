@@ -34,15 +34,9 @@
     }
     
     &-content {
-        background: #F7F7F7;
+     
         border-radius: 5px;
-        &-inactive {
-            display:none;
-        }
-        
-        &-active {
-            display:block;
-        }
+       
         
         &-parent {
             height: 0px;
@@ -58,6 +52,9 @@
             font-size: 24px;
             line-height: 34.22px;
             font-weight: 400;
+            background: #F6F6F6;
+            border-radius: 0 0 10px 10px;
+            
 
         }
     }

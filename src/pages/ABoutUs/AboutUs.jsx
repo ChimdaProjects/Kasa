@@ -1,9 +1,9 @@
 import React from "react";
 // component
 import Banner from "../../components/Banner/Banner";
+import Collapsible from "../../components/Collapsible/Collapsible";
 // import img
 import imgAbout from "../../assets/img-about.svg"
-import Collapsible from "../../components/Collapsible/Collapsible";
 //import data
 import data from "../../datas/apropos"
 //css
@@ -18,12 +18,15 @@ const AboutUs = () => {
                 altText={"illustration à la montagne"}
                 title={""}
             />
-            {data.map((item)=> (
+            {
+                data.map((item) => (
                         <Collapsible
                             key={item.id}
                             {...item}
+                            namePage="about"
                         />  
-            ))}
+                ))
+            }
         </div>
     )
 }

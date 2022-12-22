@@ -1,23 +1,21 @@
 .tag {
     display: flex;
-    justify-content: center;
-    background-color: #FF6060;
-    width: 20%;
-    height: 25px;
-    border-radius: 10px;
-    margin-right: 10px;
-    padding-bottom: 3px;
+    width: 80%;
     
     &-content {
         font-size: 14px;
         line-height: 20px;
         letter-spacing: 0em;
-        text-align: center;
+        justify-content: center;
         display: flex;
+        background-color: #FF6060;
         align-items: center;
-        
+        width: 15%;
+        height: 25px;
+        border-radius: 10px;
+        margin-right: 10px;
+        padding-bottom: 3px;
         color: #FFF;
-
     }
 }
 

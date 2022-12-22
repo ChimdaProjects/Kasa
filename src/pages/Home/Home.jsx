@@ -15,7 +15,7 @@ import list from "../../datas/listLocations"
 const Home = () => {
     
     return (
-        <React.Fragment>
+        <div className='home'>
      
         <Banner 
             imgSrc={imgHome}
@@ -27,7 +27,7 @@ const Home = () => {
             list = {list}
         /> 
 
-        </React.Fragment>
+        </div>
 
         
        
