@@ -31,8 +31,6 @@ const Slideshow = ({list}) => {
         }
     }
     
- 
-
     return (
         <div className="slideshow">
             <div 

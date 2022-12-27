@@ -10,6 +10,8 @@ import imgHome from "../../assets/img_home.svg";
 //import datas
 import list from "../../datas/listLocations"
 
+// css
+import "./home.scss"
 
 
 const Home = () => {

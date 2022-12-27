@@ -10,3 +10,14 @@
     font-size: 18px;
     text-align: left;
 }
+
+@media screen and (min-width:320px) and (max-width:767px) {
+    .title {
+        width: 100%;
+        font-size: 18px;
+    }
+    .location {
+        width: 100%;
+        font-size: 14px;
+    }
+}

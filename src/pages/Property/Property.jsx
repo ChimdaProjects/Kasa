@@ -27,7 +27,7 @@ const Property = () => {
         return <Navigate to="/notfound" /> 
     } 
     //destructuring the object rentProp to use each variable
-    const {title, host, description, rating, location, equipments, tags} = rentProp;  
+    const { title, host, description, rating, location, equipments, tags } = rentProp;  
 
      return (
             
