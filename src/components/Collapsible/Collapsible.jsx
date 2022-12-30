@@ -27,8 +27,8 @@ const Collapsible = ( { title, text, namePage } ) => {
                 style = { open ? { height : contentRef.current.scrollHeight + "px" } : { height: "0px" }} 
                 >
                     <div 
-                        className="collapse-content-text" 
-                        style= { namePage === "property" ? { height:"315px" } : undefined }
+                        className={ namePage === "property" ? "collapse-content-text heightColl" : "collapse-content-text"}
+                        
                     >
                         { text }
                     </div>

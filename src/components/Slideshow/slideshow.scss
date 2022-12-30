@@ -21,9 +21,7 @@
         font-size: 18px;
         & img {
             height: 1.5rem;
-        }
-
-        
+        }  
     }
 }
 
@@ -37,8 +35,7 @@
 }
 
 .arrow-l {
-    left: 6%;
-    
+    left: 6%; 
 }
 
 .arrow-r {
@@ -92,7 +89,7 @@
 @media screen and (min-width:320px) and (max-width:425px) {
     .slideshow {
         &-counter {
-            left: 30%;
+            left: 40%;
         }
     }
     
@@ -100,7 +97,7 @@
 @media screen and (min-width:426px) and (max-width:600px) {
     .slideshow {
         &-counter {
-            left: 35%;
+            left: 45%;
         }
     }
     
