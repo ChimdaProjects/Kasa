@@ -2,6 +2,7 @@
     margin-top:30px;
     display: flex;
     align-items: center;
+    justify-content: right;
     
     &-name {
         font-size: 18px;
@@ -16,5 +17,21 @@
         border-radius: 55%;
         object-fit: cover;
         margin-right: 10px;
+    }
+}
+
+/* RESPONSIVE */
+
+@media screen and (min-width: 320px) and (max-width:767px) {
+    .host {
+        &-name {
+            font-size: 12px;
+            line-height: 17px;
+        }
+        &-avatar {
+            width: 32px;
+            height: 32px;
+
+        }
     }
 }

@@ -13,26 +13,26 @@ import list from "../../datas/listLocations"
 // css
 import "./home.scss"
 
-
+/**
+ * This component displays the homepage
+ * @returns 
+ */
 const Home = () => {
     
     return (
-        <div className='home'>
+        <div className = 'home'>
      
-        <Banner 
-            imgSrc={imgHome}
-            altText={"illustration au bord de mer"}
-            title={"Chez vous, partout et ailleurs"}
-        />
+            < Banner 
+                imgSrc = { imgHome }
+                altText = { "illustration au bord de mer" }
+                title = { "Chez vous, partout et ailleurs" }
+            />
 
-        <Gallery 
-            list = {list}
-        /> 
+            < Gallery 
+                list = { list }
+            /> 
 
         </div>
-
-        
-       
     )
 }
 

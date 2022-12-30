@@ -8,10 +8,12 @@ const Footer = () => {
             <div className="footer-content">
                 <img 
                     className="footer-logo"
-                    src = {logo}
+                    src = { logo }
                     alt ="logo du footer"
             />
-            <p className="footer-text">2022 Kasa. All rights reserved</p>
+                <p className="footer-text">
+                    2022 Kasa. All rights reserved
+                </p>
             </div>
            
         </footer>

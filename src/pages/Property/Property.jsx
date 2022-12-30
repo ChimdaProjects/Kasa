@@ -1,5 +1,6 @@
-import React, { useEffect} from "react";
-import { useParams, useNavigate, Navigate } from "react-router-dom";
+import React from "react";
+// router
+import { useParams, Navigate } from "react-router-dom";
 //components
 import Slideshow from "../../components/Slideshow/Slideshow";
 import Tag from "../../components/Tag/Tag";
@@ -21,12 +22,11 @@ const Property = () => {
     const {locId} = useParams();
     // find the info of accommodation clicked
     let rentProp = list.find(item => item.id === locId);
-    //redirection
+    // redirection
     if (rentProp === undefined) {
-        console.log("je rentre dans la condition")
         return <Navigate to="/notfound" /> 
     } 
-    //destructuring the object rentProp to use each variable
+    // destructuring the object rentProp to use each variable
     const { title, host, description, rating, location, equipments, tags } = rentProp;  
 
      return (
@@ -42,20 +42,19 @@ const Property = () => {
                         title = { title }
                         location = { location } 
                     />
+                      <Tag 
+                    tags = { tags }
+                    />
                 </div>  
 
                 <div className="property-right">
-                    <Host info = {host}/>
+                    <Host 
+                        info =  { host }
+                    />
+                    <Rate 
+                        rating = { rating } 
+                    />
                 </div>
-            </div>
-
-            <div className="property-details">
-                <Tag 
-                    tags = {tags}
-                />
-                <Rate 
-                    rating={rating} 
-                />
             </div>
            
             <div className="property-desc">

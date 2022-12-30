@@ -11,15 +11,12 @@
 
     &-left {
         width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
     }
 
-    &-details {
-        display: flex;
-        justify-content: space-between;
-        margin: 0 100px;
-        align-items: center;
-        padding-top: 34px;
-    }
  
     &-desc {
         margin: 0 100px;
@@ -28,8 +25,7 @@
         justify-content: space-between;
         &-description, &-equipments {
             width: 590px;
-          
-            
+
         }
         
     }
@@ -39,45 +35,54 @@
     list-style-type: none; 
 }
 
-.star-empty {
-    fill: #ff6060;
+.tag, .rating {
+    margin-top: 1rem;
 }
-
 
 
 /*RESPONSIVE */
 @media screen and (min-width: 320px) and (max-width:767px) {
     .property {
-        width: 375px;
-
+        width: 100%;
+        margin: 0 20px;
+       
         &-informations {
             display: flex;
             flex-direction: column;
-            margin: 0 20px;
+            margin: 0;
             justify-content: left;
         }
 
-    &-right {
-       
-       
-    }
-    &-details {
-        display: flex;
-        flex-direction: column;
+        &-left{
         width: 100%;
-        margin:0;
-    }      
-    
-    &-desc {
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        
-        &-description, &-equipments {
-            width: 100%;
         }
-        
-    }
 
+        &-right {
+            width: calc(100% - 40px);
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: center;
+            
+        }
+
+        &-details {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin:0;
+        }      
+        
+        &-desc {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            
+            &-description, &-equipments {
+                width: calc(100% - 40px);  
+            }  
+        }
     }
+  
+ 
 }

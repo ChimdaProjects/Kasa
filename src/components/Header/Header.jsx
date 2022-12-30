@@ -1,5 +1,9 @@
+import React from "react";
+// router
 import { Link, NavLink } from "react-router-dom";
+// css
 import "./Header.scss";
+// img
 import logo from "../../assets/logo.svg";
 
 const Header = () => {
@@ -12,14 +16,14 @@ const Header = () => {
             {/** LOGO  */}
             <div className="header-img">
                 <Link to="/">
-                    <img className="header-img-content" src={logo} alt="logo of Kasa" />
+                    <img className="header-img-content" src = { logo } alt="logo of Kasa" />
                 </Link>
             </div>
             {/** NAVIGATION */}
             <nav className="header-nav">
                 <ul className="header-nav-list">
                     <li className="header-nav-list-li">
-                        {/** Link page Accueil */}
+                        {/** Link page: Accueil */}
                         <NavLink 
                                 className="header-nav-list-elt"
                                 to="/"
@@ -32,7 +36,7 @@ const Header = () => {
                     </li>
 
                     <li className="header-nav-list-li">
-                        {/** Link page A propos */}
+                        {/** Link page: A propos */}
                         <NavLink 
                             className="header-nav-list-elt"
                             to="/aboutUs"

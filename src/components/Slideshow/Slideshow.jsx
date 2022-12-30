@@ -1,20 +1,21 @@
-import React from "react";
-import "./slideshow.scss";
+import React, { useState } from "react";
+// import img
 import leftArrow from "../../assets/arrow_back.svg"
 import rightArrow from "../../assets/arrow_forward.svg" 
 import bullet from "../../assets/point.png"
 import point from "../../assets/point_normal.png"
+// css
+import "./slideshow.scss";
 
-
-import { useState } from "react";
-
-const Slideshow = ({list}) => {
-
-    const pictures = list.pictures;
-    const nbpic = pictures.length;
+const Slideshow = ( { list } ) => {
 
     const [currentIndex, setCurrentIndex ] = useState(0);
 
+    // array of pictures
+    const pictures = list.pictures;
+    // length of pictures
+    const nbpic = pictures.length;
+    // display of the previous picture when the user clicks on the left arrow 
     const previousPicture = () => {
         if (currentIndex === 0) {
             setCurrentIndex(pictures.length-1)
@@ -22,7 +23,7 @@ const Slideshow = ({list}) => {
             setCurrentIndex(currentIndex-1)
         }
     }
-
+    // display of the next picture when the user clicks on the right arrow 
     const nextPicture = () => {
         if (currentIndex === pictures.length-1) {
             setCurrentIndex(0)
@@ -34,43 +35,45 @@ const Slideshow = ({list}) => {
     return (
         <div className="slideshow">
             <div 
-                className={`arrow-l ${nbpic > 1 ? "active" : "inactive"}`} 
-                onClick={previousPicture}
+                className = { `arrow-l ${nbpic > 1 ? "active" : "inactive"}` } 
+                onClick = { previousPicture }
             >
                 <img 
-                    src={leftArrow}
-                    alt="icon back arrow"
+                    src = { leftArrow }
+                    alt = "icon back arrow"
                 />
 
             </div>
-
-            <img 
-                src={list.pictures[currentIndex]}
-                alt={`${list.title} à ${list.location}  pic n° ${currentIndex+1}`}
-                className="slideshow-img"
-            />
+            <div className="slideshow-content-img">
+                <img 
+                    src = { list.pictures[currentIndex] }
+                    alt = {`${list.title} à ${list.location}  pic n° ${currentIndex+1}` }
+                    className="slideshow-img"
+                />
+            </div>
+           
 
             <div 
-                className={`arrow-r ${nbpic > 1 ? "active" : "inactive"}`} 
-                onClick={nextPicture}
+                className = { `arrow-r ${nbpic > 1 ? "active" : "inactive"}` } 
+                onClick = { nextPicture }
             >
                 <img 
-                    src={rightArrow}
-                    alt="icon forward arrow"
+                    src = { rightArrow }
+                    alt = "icon forward arrow"
                 />
             </div>
-            <div className={`slideshow-counter ${nbpic > 1 ? "active" : "inactive"}`}>
+            <div className = { `slideshow-counter ${nbpic > 1 ? "active" : "inactive"}` }>
                { pictures.map((item, index)=> (
                 
-                <img key={`bullet-${index}`} src={index === currentIndex ? bullet : point} />
+                <img 
+                    key = { `bullet-${index}` } 
+                    src = { index === currentIndex ? bullet : point } 
+                    alt="icon bullet point"
+                />
                
                ))}
                
             </div>
-            {/*<div className="slideshow-counter">
-                {curentIndex+1} / {nbpic}
-             </div>*/}
-            
         </div>
     )
 } 

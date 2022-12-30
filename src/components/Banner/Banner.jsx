@@ -1,16 +1,17 @@
+//css
 import "./Banner.scss"
 
 
-const Banner = ({imgSrc, altText, title}) => {
+const Banner = ( { imgSrc, altText, title } ) => {
     return (
         <div className="banner">
             <img 
-                src= {imgSrc} 
-                alt={altText}
+                src = { imgSrc } 
+                alt = { altText }
                 className="banner-img" 
             />
             <h1 className="banner-title">
-                {title}
+                { title }
             </h1>
         </div>
     )
