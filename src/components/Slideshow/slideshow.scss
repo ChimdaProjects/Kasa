@@ -17,7 +17,7 @@
     &-counter {
         position:absolute;
         left: 49%;
-        bottom: 52%;
+        bottom: 40%;
         font-size: 18px;
         & img {
             height: 1.5rem;
@@ -111,12 +111,29 @@
     }
     
 }
-
-@media screen and (min-width:1000px) and (max-width:1440px) {
+@media screen and (min-width:768px) and (max-width:1024px) {
     .slideshow {
         &-counter {
-            left: 50%;
-            bottom: 30%;
+            left: 45%;
+            bottom: 5%;
+        }
+    
+        .arrow-l {
+            left: 10%;
+            
+        }
+        .arrow-r {
+           
+            right: 10%;
+        }
+    }
+    
+}
+@media screen and (min-width:1025px) and (max-width:1400px) {
+    .slideshow {
+        &-counter {
+            left: 45%;
+            bottom: 5%;
         }
     }
     

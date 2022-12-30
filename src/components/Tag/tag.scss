@@ -35,3 +35,16 @@
 
     }
 }
+
+@media screen and (min-width: 768px) and (max-width:1024px) {
+    .tag {
+       
+        &-content {
+            font-size: 10px;
+            width: 35%;
+            height: 1.1rem;
+            margin-bottom:0.5rem;
+        }
+
+    }
+}
