@@ -59,20 +59,16 @@
     .banner {
         margin: 0 20px;
         max-width: calc(100% - 40px);
-        height: 150px;
+        height: 222px;
         
 
         &-img {
-            max-width: 100%;
-            height: 200px;
+            width: 100%;
+            height: 222px;
         }
 
         &-title {
-           margin:0;
-           left: 3rem;
-            font-size: 24px;
-            text-align: left;
-            width: 217px;
+            font-size: 30px;
         }
     }
     
