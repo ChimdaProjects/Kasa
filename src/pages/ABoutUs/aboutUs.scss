@@ -1,7 +1,7 @@
 .aboutUs {
     height: 130vh;
     @media screen and (min-width:1024px) and (max-width: 1439px) {
-        height: 140vh;
+        height: 160vh;
     }
 }
 
@@ -10,9 +10,15 @@
        max-width: 100wh;
        
       //margin:0 auto;
-    & .collapse {
-        margin: 0 20px;
+        & .collapse {
+            margin: 0 20px;
+        }
     }
-  }
+}
+
+@media screen and (min-width: 767px) and (max-width:1024px) {
+    .aboutUs {
+        height: 150vh;
+    }
 
 }

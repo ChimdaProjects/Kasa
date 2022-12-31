@@ -12,11 +12,8 @@
         background: #FF6060;
         border-radius: 5px;
         height: 47px;
-        //width: 335px;
-       
         border:none;
         
-
         &-title {
             display: flex;
             align-items: center;
@@ -97,11 +94,17 @@
 
  @media screen and (min-width: 768px) and (max-width:1024px) {
     .collapse {
+        width: calc(100% - 40px);
+        &-btn {
+            &-title {
+                font-size: 20px;
+            }
+        }
         &-content {
       
             &-text {
-                font-size: 15px;
-                line-height: 17px;
+                font-size: 17px;
+                line-height: 20px;
                 text-align: left;
                 padding: 20px 10px;
                
